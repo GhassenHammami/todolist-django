@@ -1,0 +1,72 @@
+{% extends 'taches/base.html' %}
+
+{% block title %}TaskManager - Gestion de Tâches Simplifiée{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 fw-bold mb-4">Gérez vos tâches efficacement</h1>
+        <p class="lead mb-4">
+            TaskManager est votre solution tout-en-un pour organiser vos tâches quotidiennes.<br>
+            Simple, intuitif et puissant, notre application vous aide à rester productif.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
+            <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                <i class="fas fa-user-plus me-2"></i>Commencer gratuitement
+            </a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-4">
+                <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 pt-5">
+    <div class="col-12 text-center mb-5">
+        <h2 class="fw-bold">Pourquoi choisir TaskManager ?</h2>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-tasks fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Gestion intuitive</h3>
+                <p class="card-text">
+                    Interface simple et moderne pour une gestion efficace de vos tâches.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-bell fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Rappels intelligents</h3>
+                <p class="card-text">
+                    Ne manquez plus jamais une échéance importante.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Suivi de productivité</h3>
+                <p class="card-text">
+                    Visualisez votre progression et améliorez votre efficacité.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5 pt-5">
+    <div class="col-12 text-center">
+        <h2 class="fw-bold mb-4">Prêt à commencer ?</h2>
+        <p class="lead mb-4">Rejoignez des milliers d'utilisateurs satisfaits</p>
+        <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-5">
+            <i class="fas fa-rocket me-2"></i>Créer un compte gratuit
+        </a>
+    </div>
+</div>
+{% endblock %} 

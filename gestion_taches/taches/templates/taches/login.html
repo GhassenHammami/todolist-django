@@ -1,0 +1,85 @@
+{% extends 'taches/base.html' %}
+
+{% block title %}Connexion - TaskManager{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-white text-center">
+                <h3 class="mb-0">Connexion</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Nom d'utilisateur</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            {{ form.username }}
+                        </div>
+                        {% if form.username.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.username.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_password" class="form-label">Mot de passe</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            {{ form.password }}
+                        </div>
+                        {% if form.password.errors %}
+                            <div class="invalid-feedback d-block">
+                                {{ form.password.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
+                        <label class="form-check-label" for="remember_me">Se souvenir de moi</label>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-white text-center">
+                <p class="mb-0">Vous n'avez pas de compte ? 
+                    <a href="{% url 'register' %}" class="text-decoration-none">Inscrivez-vous</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .input-group-text {
+        width: 40px;
+        justify-content: center;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        border-radius: 0 0.25rem 0.25rem 0 !important;
+    }
+    
+    .input-group-text {
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+</style>
+
+<script>
+    // Add Bootstrap classes to form fields
+    document.querySelectorAll('input').forEach(input => {
+        input.classList.add('form-control');
+    });
+</script>
+{% endblock %} 

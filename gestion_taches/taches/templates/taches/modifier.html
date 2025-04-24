@@ -1,6 +1,6 @@
 {% extends 'taches/base.html' %}
 
-{% block title %}Nouvelle Tâche - TaskManager{% endblock %}
+{% block title %}Modifier la Tâche - TaskManager{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header bg-white">
                 <h3 class="mb-0">
-                    <i class="fas fa-plus-circle me-2"></i>Nouvelle Tâche
+                    <i class="fas fa-edit me-2"></i>Modifier la Tâche
                 </h3>
             </div>
             <div class="card-body">
@@ -90,7 +90,7 @@
                             <i class="fas fa-times me-2"></i>Annuler
                         </a>
                         <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save me-2"></i>Enregistrer
+                            <i class="fas fa-save me-2"></i>Enregistrer les modifications
                         </button>
                     </div>
                 </form>
@@ -123,4 +123,4 @@
         field.classList.add('form-control');
     });
 </script>
-{% endblock %}
+{% endblock %} 

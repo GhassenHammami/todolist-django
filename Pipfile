@@ -13,4 +13,4 @@ python_version = "3.11"
 
 [scripts]
 run = "cd gestion_taches && python manage.py runserver"
-migrate = "cd gestion_taches && python manage.py migrate"
+migrate = "cd gestion_taches && python manage.py makemigrations && python manage.py migrate"
