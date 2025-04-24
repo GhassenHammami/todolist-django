@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter un contact</title>
+    <link rel="stylesheet" type="text/css" href="/static/taches/style.css" />
+  </head>
+  <body>
+    <h2>Liste des Tâches</h2>
+    <ul>
+      {% for tache in taches %}
+      <li>
+        {{ tache.titre }} - {{ tache.get_statut_display }} - {{
+        tache.date_echeance|date:"d/m/Y" }}
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'ajouter_tache' %}">Ajouter une tâche</a>
+  </body>
+</html>
